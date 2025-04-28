@@ -2,104 +2,115 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
-  .container{
-      width: 100%;
-      height: 100vh;
-      background: linear-gradient(110deg, #000428 , #004e92);
-      padding: 10px;
-  }
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(110deg, #000428, #004e92);
+    padding: 10px;
+}
 
-  .the-app{
-      width: 100%;
-      max-width: 540px;
-      background: #fff;
-      margin: 100px auto 20px;
-      padding: 40px 50px 70px;
-      border-radius: 10px;
-  }
+.the-app {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-  .img{
-      width: 30px;
-      margin-left: 10px;
-  }
+.img {
+    width: 30px;
+    margin-left: 10px;
+}
 
-  .the-app h2{
+.the-app h2 {
     color: #011c4e;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 30px;
-  }
+    font-size: 24px;
+}
 
-  .row{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #daeeff;
-      border-radius: 30px;
-      padding-left: 20px;
-      margin-bottom: 25px;
-  }
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #daeeff;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
 
-  input{
-      flex: 1;
-      border: none;
-      outline: none;
-      background: transparent;
-      padding: 10px;
-      font-weight: 14px;
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 15px 10px;
+    font-size: 16px;
+}
 
-  }
+button {
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 14px 30px;
+    background: rgb(47, 102, 253);
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
 
-  button{
-      border-radius: 40px;
-      border: none;
-      outline: none;
-      padding: 16px 50px;
-      background: rgb(47, 102, 253);
-      font-size: 16px;
-      cursor: pointer;
-  }
+button:hover {
+    background: rgb(30, 80, 220);
+}
 
-  ul li{
-      list-style: none;
-      font-size: 17px;
-      padding: 12px 8px 12px 50px;
-      user-select: none;
-      cursor: pointer;
-      position: relative;
-  }
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    word-break: break-word;
+}
 
-  ul li::before{
-      content: '';
-      position: absolute;
-      height: 28px;
-      width: 28px;
-      border-radius: 50%;
-      background-image: url(radio.png);
-      background-size: cover;
-      background-position: center;
-      top: 10px;
-      left: 8px;
-      opacity: 40%;
-  }
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(radio.png);
+    background-size: cover;
+    background-position: center;
+    top: 10px;
+    left: 8px;
+    opacity: 40%;
+}
 
-  ul li.checked{
-      color: #8ec8fc;
-      text-decoration: line-through;
-  }
+ul li.checked {
+    color: #8ec8fc;
+    text-decoration: line-through;
+}
 
-  ul li.checked::before{
+ul li.checked::before {
     background-image: url(check.png);
     width: 25px;
     height: 25px;
-  }
+}
 
-ul li span{
+ul li span {
     position: absolute;
-    right: 0px;
+    right: 0;
     top: 5px;
     width: 40px;
     height: 40px;
@@ -107,34 +118,56 @@ ul li span{
     color: rgb(3, 24, 143);
     line-height: 40px;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 50%;
+    transition: background 0.3s;
 }
 
-ul li span:hover{
-    /* color: rgb(255, 0, 0); */
+ul li span:hover {
     background: rgb(209, 219, 255);
-    /* transition: 0.5s; */
 }
 
+/* ------------------- Responsive Design ------------------ */
 
+@media (max-width: 480px) {
+    .the-app {
+        margin: 50px 10px 20px;
+        padding: 30px 20px 40px;
+    }
 
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+    }
 
+    input {
+        padding: 12px;
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
 
+    button {
+        padding: 12px;
+        width: 100%;
+        font-size: 15px;
+    }
 
+    .the-app h2 {
+        font-size: 20px;
+    }
+}
 
+@media (max-width: 350px) {
+    .the-app {
+        padding: 20px 15px;
+    }
 
+    .the-app h2 {
+        font-size: 18px;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+    input, button {
+        font-size: 14px;
+    }
+}
